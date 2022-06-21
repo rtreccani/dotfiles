@@ -2,18 +2,7 @@ set $mod Mod4
 
 #bar
 exec_always --no-startup-id /home/raffi/.config/polybar/polybar.sh
-
-exec_always --no-startup-id "i3-msg 'workspace 1; append_layout 
-~/.config/i3/boot.json'"
-
-exec_always --no-startup-id "termite --title=nf -e 'bash -c \"neofetch && 
-bash\"' --hold"
-
-exec_always --no-startup-id "termite --title=cm -e 'bash -c \"cmatrix -s; bash\"' --hold"
-
-
-exec_always --no-startup-id "termite --title=mk -e 'bash -c \"cat mickey.txt; bash\"' --hold" 
-
+exec_always --no-startup-id 'wal -i ~/dotfiles/i3/back.jpg'
 #/bar
 
 #hide borders
@@ -32,7 +21,7 @@ bindsym --release $mod+p exec --no-startup-id "scrot -e 'mv $f ~/Pictures/'"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -42,7 +31,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+j focus left
